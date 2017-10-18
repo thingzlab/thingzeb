@@ -1,0 +1,7 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "266046603710.dkr.ecr.ca-central-1.amazonaws.com/apexdev-ecr:latest",
+    "Update": "true"
+  }
+}
