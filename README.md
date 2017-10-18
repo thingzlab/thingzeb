@@ -1,1 +1,0 @@
-# EB Simple Demo App
