@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --region ca-central-1)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t apexdev-ecr .
+      - docker tag apexdev-ecr:latest 266046603710.dkr.ecr.ca-central-1.amazonaws.com/apex-demo:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 266046603710.dkr.ecr.ca-central-1.amazonaws.com/apex-demo:latest         
+artifacts:
+  files:
+    - Dockerrun.aws.json
