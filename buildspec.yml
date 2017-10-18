@@ -9,8 +9,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t apexdev-ecr .
-      - docker tag apexdev-ecr:latest 266046603710.dkr.ecr.ca-central-1.amazonaws.com/apex-demo:latest
+      - docker build -t apex-demo .
+      - docker tag apex-demo:latest 266046603710.dkr.ecr.ca-central-1.amazonaws.com/apex-demo:latest
   post_build:
     commands:
       - echo Build completed on `date`
